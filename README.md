@@ -230,6 +230,9 @@ sudo systemctl restart httpdp
 ```
 ![4544](https://github.com/Leadxd2501/Grupo-7-Proyecto-Final/assets/154466596/a6329386-e6d3-4130-9563-64bc4cd31b61)
 
+Tenemos todo listo, deberíamos poder ver la interfaz web de configuración de wordpress, donde deberemos seleccionar el idioma y crear el usuario de administración:
+
+![image](https://github.com/Leadxd2501/Grupo-7-Proyecto-Final/assets/154466596/abd1064c-a22a-4791-a1c4-11f128498b14)
 
 
 
