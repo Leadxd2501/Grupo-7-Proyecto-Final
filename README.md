@@ -126,6 +126,113 @@ http://ip-servidor/info.php
 ![image](https://github.com/Leadxd2501/Grupo-7-Proyecto-Final/assets/154466596/445f6edf-3710-483e-a6b6-1c3e1a0631ad)
 
 Bueno con todo lo visto ya tenemos instalado correctamente "LAMP" y estaremos listos para la instalación de "WordPress".
+**Instalación WordPress**
+Ahora vamos a descargar y descomprimir WordPress
+Cambiarse al directorio donde se alojará WordPress:
+```
+cd /var/www/html
+```
+Descargar archivo de worpress:
+```
+wget http://wordpress.org/latest.tar.gz
+```
+Si **wget** no funciona seguramente no está instalado, se puede probar instalarlo con el siguiente comando:
+```
+sudo yum install wget
+```
+Se descargará un archivo .tar.gz descrompimir el archivo:
+```
+tar -xzvf latest.tar.gz
+```
+Ahora tendremos una carpeta llamada wordpress, nos cambiamos hacia ese directorio:
+```
+cd /var/www/html/wordpress
+```
+Creamos el directorio donde subiremos archivos a wordpress:
+```
+mkdir /var/www/html/wordpress/wp-content/uploads
+```
+Asignamos el directorio al usuario de Apache para que este sea el administrador de todo el directorio:
+```
+sudo chown -R apache:apache /var/www/html/*
+```
+Cambiamos los permisos de lectura y escritura para que Apache pueda modificar este contenido:
+```
+chmod -R 777 /var/www/html/wordpress
+```
+**Crear base de datos y usuario**
+Se necesita una base de datos para alojar las tablas de los servicios de wordpres, para ello utilizaremos MySQL.
+Creamos una base de datos:
+```
+create database wordpress;
+```
+Creamos un usuario:
+```
+CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'contraseña';
+```
+Brindamos permisos para la base de datos: 
+```
+GRANT ALL PRIVILEGES ON wordpress.* TO 'usuario'@'localhost';
+```
+Recargamos permisos de usuarios en MySQL:
+```
+FLUSH PRIVILEGES;
+```
+y salimos con el comando:
+```
+exit
+```
+![ltkhopfghk36](https://github.com/Leadxd2501/Grupo-7-Proyecto-Final/assets/154466596/00c86d58-1954-4085-b418-3bab01c07ab2)
+
+Configuración de WordPress
+Ya tenemos WordPress instalado y la base de datos lista para utilizar, resta conectar wordpress a la base de datos y completar la configuración.
+Nos cambiamos al directorio de wordpress:
+```
+cd /var/www/html/wordpress
+```
+Cambiamos nombre a archivo de configuración creando una copia:
+```
+cp wp-config-sample.php wp-config.php
+```
+Modificamos el archivo de configuración, aquí deberemos colocar las credenciales de la base de datos que creamos en el paso anterior:
+```
+sudo nano wp-config.php
+```
+En el mismo archivo, modificamos las llaves de autenticación, para ellos vamos a la dirección:
+https://api.wordpress.org/secret-key/1.1/salt/ 
+Y copiamos las llaves para pegarlas en el archivo:
+
+![image](https://github.com/Leadxd2501/Grupo-7-Proyecto-Final/assets/154466596/2f238d81-6087-47ab-bb4f-d850359c6e2c)
+
+**Configurar virtual host Apache**
+Guardamos y salimos del archivo, ahora tenemos que crear el archivo de configuración en Apache para que direcciones todas las solicitudes a WordPress, nos cambiamos de directorio o modificamos el archivo directamente de donde estemos:
+```
+cd /etc/httpd/conf.d
+```
+En este directorio encontraremos todas las configureaciones de las aplicaciones que hagan uso de apache (php.conf, phpMyAdmin.conf, etc) crearemos el archivo wordpress.conf:
+```
+sudo nano wordpress.conf
+```
+y colocamos lo siguiente:
+```
+<VirtualHost *:80>
+ServerAdmin root@localhost
+DocumentRoot /var/www/html/wordpress
+<Directory #/var/www/html/wordpress/#>
+        AllowOverride All
+	Require all granted
+</Directory>
+</VirtualHost>
+```
+Reiniciamos el servicio del Apache con el siguiente codigo:
+```
+sudo systemctl restart httpdp
+```
+![4544](https://github.com/Leadxd2501/Grupo-7-Proyecto-Final/assets/154466596/a6329386-e6d3-4130-9563-64bc4cd31b61)
+
+
+
+
 
 
 
