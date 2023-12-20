@@ -11,4 +11,8 @@ CentOS fue lanzado por primera vez en 2004. Es desarrollado por un grupo de volu
 Es un sistema de gestión de bases de datos relacional de código abierto ampliamente utilizado en aplicaciones web y empresariales.
 Fue creado por suecos Michael Widenius y David Axmark junto con finlandés Monty Widenius, lanzado por primera vez en 1995. Desde entonces, ha experimentado múltiples versiones y adquisiciones, siendo una de las bases de datos más populares en el mundo. 
 ### Apache 
-Apache es un servidor web de código abierto muy popular y potente. Apache HTTP Server, comúnmente conocido como Apache, fue desarrollado por la Apache Software Foundation. Su desarrollo comenzó en 1995 y desde entonces ha sido uno de los servidores web más utilizados en el mundo. 
+Apache es un servidor web de código abierto muy popular y potente. 
+Apache HTTP Server, comúnmente conocido como Apache, fue desarrollado por la Apache Software Foundation. Su desarrollo comenzó en 1995 y desde entonces ha sido uno de los servidores web más utilizados en el mundo. 
+### PHP
+PHP es un lenguaje de programación utilizado principalmente para crear sitios web dinámicos. 
+Fue creado en 1994 por Rasmus Lerdorf y se destaca por su integración sencilla con HTML. PHP permite a los desarrolladores crear páginas web interactivas y dinámicas al ejecutar código en el servidor.
