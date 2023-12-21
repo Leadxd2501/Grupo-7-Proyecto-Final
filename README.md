@@ -1,5 +1,10 @@
 # Grupo-7-Proyecto-Final
 Informe de la instalación de una distribución y LAMP, grupo 7 de la materia de Sistemas Operativos 2, Turno Medio día, diciembre 2023.
+### Estudiantes
+Sally Aparicio P.
+Yenny Serrudo P.
+Luis Fernando Urquiza T.
+
 ## Introducción
 En este documenta estaremos viendo como se instala una distribución de Linux (que en este caso la distribución a instalar será “CentOS”) y está la estaremos ejecutando en “Oracle VM VirtualBox” al igual que se mostrará con imágenes, códigos y descripciones de los mismo de manera clara y entendible a parte también se estará instalando en la misma distribución"LAMP" y “WordPress”. 
 ## Marco Teorico
